@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Inventario de Técnicos</title>
+    <link rel="stylesheet" href="inventory.css">
+</head>
+<body onload="viewInventory()">
+    <header>
+        <h1>Inventario de Técnicos</h1>
+    </header>
+
+    <!-- Menú Desplegable -->
+<nav>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#">Menú</a>
+            <ul class="dropdown-content">
+                <li><a href="tecnico.html">Descontar Materiales (Técnico)</a></li>
+                <li><a href="almacenero.html">Añadir/Quitar Materiales (Almacenero)</a></li>
+                <li><a href="inventario.html">Ver Inventario</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+    <section class="inventory-overview">
+        <h2>Lista de Inventario</h2>
+        <div class="technician-list">
+            <label for="technician-view">Selecciona Técnico:</label>
+            <select id="technician-view" onchange="viewInventory()">
+                <option value="tecnico1">Técnico 1</option>
+                <option value="tecnico2">Técnico 2</option>
+                <option value="tecnico3">Técnico 3</option>
+            </select>
+        </div>
+
+
+    <div class="inventory-details">
+        <h3>Inventario de <span id="technician-name">Técnico 1</span>:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>Cantidad</th>
+                    <th>Seriales (si aplica)</th>
+                </tr>
+            </thead>
+            <tbody id="material-list-view">
+                <!-- Inventario mostrado aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="inventory.js"></script>
+</body>
+</html>
